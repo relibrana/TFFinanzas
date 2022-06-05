@@ -5,6 +5,8 @@ import com.finanzas.trabajofinal.entities.Bono;
 import com.finanzas.trabajofinal.exceptions.AccessBadRequestException;
 import com.finanzas.trabajofinal.repositories.BonoRepository;
 import com.finanzas.trabajofinal.util.PeriodoPago;
+import com.finanzas.trabajofinal.util.TipoTasaCupon;
+import com.finanzas.trabajofinal.util.TipoVencimiento;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +27,9 @@ public class BonoService {
         Bono bonoObj=new Bono();
 
         bonoObj.setTasaCupon(bonoRequest.getTasaCupon());
+        bonoObj.setTipoTasaCupon(TipoTasaCupon.valueOf(bonoRequest.getTipoTasaCupon()));
         bonoObj.setVencimiento(bonoRequest.getVencimiento());
+        bonoObj.setTipoVencimiento(TipoVencimiento.valueOf(bonoRequest.getTipoVencimiento()));
         bonoObj.setValorNominal(bonoRequest.getValorNominal());
         bonoObj.setPeriodoPago(PeriodoPago.valueOf(bonoRequest.getPeriodoPago()));
 

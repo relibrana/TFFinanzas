@@ -13,6 +13,8 @@ public class BonoRequest {
     private Long id;
     private Long valorNominal;
     private Long tasaCupon;
+    private String tipoTasaCupon;
     private String periodoPago;
     private Integer vencimiento;
+    private String tipoVencimiento;
 }
